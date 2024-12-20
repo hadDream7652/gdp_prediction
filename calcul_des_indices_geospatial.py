@@ -2,6 +2,7 @@ import ee
 from concurrent.futures import ThreadPoolExecutor
 
 # Initialisation de Google Earth Engine
+ee.Authenticate()
 ee.Initialize()
 
 # Charger les régions
