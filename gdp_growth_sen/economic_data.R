@@ -11,7 +11,6 @@ var_eco <- var_eco %>% pivot_wider(names_from = NOMFR_INDICATOR, values_from = O
 var_eco <- var_eco %>% select(-`PRODUIT INTERIEUR BRUT (en milliards de FCFA)`)
 
 write_dta(PIB, 'data/PIB.dta')
-write_dta(var_eco, 'data/variables_eco.dta')
 
 {
   var_eco <- var_eco %>% rename(PIB = Valeur)
@@ -72,3 +71,5 @@ write_dta(var_eco, 'data/variables_eco.dta')
   var_eco$taxes_nettes_produits = as.numeric(var_eco$taxes_nettes_produits)
   var_eco$VA_sec_prim = as.numeric(var_eco$VA_sec_prim)
 }
+
+write_dta(var_eco, 'data/variables_eco.dta')
